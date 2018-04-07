@@ -15,7 +15,7 @@ import com.rabbitmq.client.DefaultConsumer;
 import com.rabbitmq.client.Envelope;
 
 public class Worker {
-	private static final Logger LOGGER = LoggerFactory.getLogger(QueuesTest.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(Worker.class);
 	public static void main(String[] args) throws Exception {
 		
 		ConnectionFactory factory = new ConnectionFactory();

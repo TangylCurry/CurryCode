@@ -15,7 +15,7 @@ import com.rabbitmq.client.DefaultConsumer;
 import com.rabbitmq.client.Envelope;
 
 public class Subscribe {
-	private static final Logger LOGGER = LoggerFactory.getLogger(Publisher.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(Subscribe.class);
 	private static final String EXCHANGE_NAME = "messageExchange";
 	public static void main(String[] args) throws Exception {
 		
@@ -32,7 +32,7 @@ public class Subscribe {
     		@Override
     		public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties pro,byte[] body) throws IOException {
     			String message = new String(body, "utf-8");
-    			LOGGER.info("Received---- "+message);
+    			LOGGER.info(" Subscriber Received---- "+message);
     		}
     	};
     	channel.basicConsume(queueName, true,consumer);
